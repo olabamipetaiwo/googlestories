@@ -38,7 +38,7 @@ export default function FeatureSlides() {
       return tl;
     }
     const master = gsap.timeline();
-    master.add(stopTrigger()); //with a gap of 2 seconds
+    master.add(stopTrigger()); 
   }, []);
 
   return (
