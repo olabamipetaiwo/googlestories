@@ -5,18 +5,18 @@ import HeroHeader from "./HeroHeader";
 import HeroPhoneBlock from "./HeroPhoneBlock";
 import HeroUsedBy from "./HeroUsedBy";
 
-import './style.scss';
+import "./style.scss";
 
 export default function Hero() {
   return (
     <div className="hero-container">
       <HeroHeader />
-      {/* <div className="hero-media">
+      <div className="hero-media">
         <HeroCollage />
         <HeroPhoneBlock />
       </div>
-      <HeroUsedBy/>
-      <HeroFooter/> */}
+      <HeroUsedBy />
+      <HeroFooter />
     </div>
   );
 }

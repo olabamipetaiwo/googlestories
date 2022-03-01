@@ -10,17 +10,16 @@ const videoUrl =
 export default function HeroPhoneBlock() {
   const phoneRef = useRef(null);
 
-
   useEffect(() => {
     function intro() {
-      console.log({ c: phoneRef.current });
       const tl = gsap.timeline({});
       tl.fromTo(phoneRef.current, { y: 200 }, { duration: 1, y: 0 });
       return tl;
     }
+
     function stopTrigger() {
       const tl = gsap.timeline({
-        delay:1,
+        delay: 1,
         scrollTrigger: {
           trigger: phoneRef.current,
           start: "top top",
@@ -37,23 +36,20 @@ export default function HeroPhoneBlock() {
       tl.to(
         ".hero-container",
         {
-          // selector text, Array, or object
-          backgroundColor: "black", // camelCase
-          duration: 0.25, // seconds
+          backgroundColor: "black",
+          duration: 0.25,
         },
         "-=0.5"
       );
 
       return tl;
     }
-    const master = gsap.timeline();
-    master.add(intro()); //with a gap of 2 seconds
 
-    
-    // could not make it with delay from gsap
-    setTimeout(()=>{
-      master.add(stopTrigger())
-    }, 1000)
+    const master = gsap.timeline();
+    master.add(intro());
+    setTimeout(() => {
+      master.add(stopTrigger());
+    }, 1000);
   }, []);
 
   return (
@@ -68,7 +64,6 @@ export default function HeroPhoneBlock() {
           autoPlay
           webkit-playsinline=""
           loop
-          // poster="https://lh3.googleusercontent.com/AJYQSvDZk4lqSWgBeiKFnE6OXdWWp8up4UdugQPqDVqpV4sW4DOtxzOTcuMJYlU771xp4nhG4mCUrOcPM3HiEbxns9QpTz90wLe13w=s0"
           src={videoUrl}
         ></video>
       </div>

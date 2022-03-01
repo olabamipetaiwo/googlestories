@@ -4,14 +4,17 @@ import FeatureSlide from "./FeatureSlide";
 import { gsap } from "gsap";
 import { useRef } from "react";
 import { useEffect } from "react";
-import cn from 'classnames';
+import cn from "classnames";
 
 function RenderImages({ activeFeatureIndex }) {
   return featureSlides.map(({ imageUrl }, index) => (
     <img
       className={cn({ "as-primary": activeFeatureIndex === index })}
       key={imageUrl}
-      style={{ backgroundImage: `url(${imageUrl})` }}
+      style={{
+        backgroundImage: `url(${imageUrl})`,
+        backgroundColor: "red",
+      }}
     />
   ));
 }
@@ -19,7 +22,6 @@ export default function FeatureSlides() {
   const [activeFeatureIndex, setFeatureIndex] = useState(0);
   const featureSliderRef = useRef(null);
   const featureSlidesRightRef = useRef(null);
- ;
 
   useEffect(() => {
     function stopTrigger() {
@@ -38,7 +40,6 @@ export default function FeatureSlides() {
     const master = gsap.timeline();
     master.add(stopTrigger()); //with a gap of 2 seconds
   }, []);
-
 
   return (
     <div ref={featureSliderRef} className="feature-slides-container">

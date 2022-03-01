@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
 import { gsap } from "gsap";
-
 import { videos, photos } from "../../data";
+
 function VideoElement({ src }) {
   return (
     <div className="hero-element">
@@ -11,7 +11,6 @@ function VideoElement({ src }) {
         autoPlay
         webkit-playsinline=""
         loop
-        // poster="https://lh3.googleusercontent.com/AJYQSvDZk4lqSWgBeiKFnE6OXdWWp8up4UdugQPqDVqpV4sW4DOtxzOTcuMJYlU771xp4nhG4mCUrOcPM3HiEbxns9QpTz90wLe13w=s0"
         src={src}
       ></video>
     </div>
@@ -49,14 +48,14 @@ export default function HeroCollage() {
   return (
     <div className="hero-collage">
       <div className="left-column">
-        {leftImages.map((src) => (
+        {leftImages.map(src => (
           <ImageElement key={src} src={src} />
         ))}
         <VideoElement src={leftVideo} />
       </div>
       <div className="right-column">
         <VideoElement src={rightVideo} />
-        {rightImages.map((src) => (
+        {rightImages.map(src => (
           <ImageElement key={src} src={src} />
         ))}
       </div>
